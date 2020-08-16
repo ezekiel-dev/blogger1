@@ -46,4 +46,9 @@ class ArticlesController < ApplicationController
 
     redirect_to articles_path
   end
+
+  def tag_list
+    @article = Article.find(params[:id])
+    @article.tags.join(", ")
+  end
 end
